@@ -1,33 +1,33 @@
 :root {
-  /* Paleta base: azul marino / azul intenso con acentos naranja. */
-  --navy-900: #061527;
-  --navy-800: #0b1f3a;
-  --navy-700: #123a6b;
-  --navy-600: #1b4f8f;
-  --navy-500: #2a6bc0;
-  --navy-100: #dbe7f7;
+  /* Paleta profesional: azul institucional con un único acento naranja. */
+  --navy-900: #001f3f;
+  --navy-800: #003366;
+  --navy-700: #1b365d;
+  --navy-600: #1b4a7a;
+  --navy-500: #2f6098;
+  --navy-100: #dce8f4;
 
-  --orange-600: #e35d00;
-  --orange-500: #ff7a1a;
-  --orange-400: #ff9d3c;
+  --orange-600: #c44400;
+  --orange-500: #e65100;
+  --orange-400: #f07333;
 
-  --green-500: #1f9d55;
-  --green-600: #167a41;
-  --amber-500: #d98a00;
-  --red-500: #d92d20;
-  --red-600: #b01f14;
+  --green-500: #2f855a;
+  --green-600: #276749;
+  --amber-500: #b7791f;
+  --red-500: #c53030;
+  --red-600: #9b2c2c;
 
-  --bg: #f2f5fa;
+  --bg: #f0f4f8;
   --surface: #ffffff;
-  --surface-2: #eef3fb;
-  --text: #0f1e33;
-  --text-muted: #51617a;
-  --border: #cfd9e8;
+  --surface-2: #f7f9fc;
+  --text: #1b365d;
+  --text-muted: #667085;
+  --border: #e4e9f0;
 
-  --radius: 14px;
-  --radius-sm: 10px;
-  --shadow: 0 2px 10px rgba(6, 21, 39, 0.08);
-  --shadow-lg: 0 8px 26px rgba(6, 21, 39, 0.18);
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow: 0 1px 2px rgba(16, 24, 40, 0.05);
+  --shadow-lg: 0 10px 24px rgba(16, 24, 40, 0.1);
 
   --font-scale: 1;
   --header-h: 56px;

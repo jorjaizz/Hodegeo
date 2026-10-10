@@ -20,22 +20,22 @@ export function SimPanel() {
       </div>
       <div className="btn-row">
         <button type="button" className="btn" onClick={() => transport.simulateButton('sos')}>
-          🔴 Botón S.O.S (2 s)
+          Botón S.O.S (2 s)
         </button>
         <button type="button" className="btn" onClick={() => transport.simulateButton('findPhone')}>
-          📱 Botón corto (encontrar celular)
+          Botón corto (encontrar celular)
         </button>
         <button type="button" className="btn" onClick={() => transport.triggerObstacle()}>
-          🚧 Obstáculo adelante
+          Obstáculo adelante
         </button>
         <button type="button" className="btn" onClick={() => transport.forceLowBattery()}>
-          🔋 Batería baja (15 %)
+          Batería baja (15 %)
         </button>
         <button type="button" className="btn btn--ghost" onClick={() => transport.loseConnection()}>
-          ✂ Perder conexión
+          Perder conexión
         </button>
         <button type="button" className="btn btn--ghost" onClick={() => void transport.restoreConnection()}>
-          🔌 Restablecer conexión
+          Restablecer conexión
         </button>
       </div>
     </section>

@@ -27,7 +27,7 @@ export function Connect() {
           onClick={() => void handleConnect()}
           disabled={connecting}
         >
-          {connecting ? 'Conectando…' : sim ? '▶ Conectar simulador' : '🔵 Conectar bastón'}
+          {connecting ? 'Conectando…' : sim ? 'Conectar simulador' : 'Conectar bastón'}
         </button>
 
         <label className="switch" style={{ marginTop: 14 }}>

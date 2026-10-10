@@ -10,10 +10,7 @@ export function FindPhoneOverlay() {
   return (
     <div className="findphone" role="alertdialog" aria-modal="true" aria-label="Encontrar mi celular">
       <div className="findphone__panel">
-        <div className="findphone__icon" aria-hidden="true">
-          📱
-        </div>
-        <p className="findphone__title">¡Aquí estoy!</p>
+        <p className="findphone__title">Aquí estoy</p>
         <p className="findphone__sub">Tu bastón pidió encontrar el celular.</p>
         <button type="button" className="btn btn--primary btn--big" onClick={() => store.stopFindPhone()}>
           Detener

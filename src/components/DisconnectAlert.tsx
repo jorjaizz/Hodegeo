@@ -11,7 +11,7 @@ export function DisconnectAlert() {
   return (
     <div className="disconnect" role="alert" aria-live="assertive">
       <div className="disconnect__panel">
-        <p className="disconnect__title">🔌 Bastón desconectado</p>
+        <p className="disconnect__title">Bastón desconectado</p>
         <p className="disconnect__sub">
           {attempt > 0 ? `Reintentando ${attempt}/6…` : 'Reintentando conexión…'}
         </p>

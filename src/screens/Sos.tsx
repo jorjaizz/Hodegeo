@@ -95,9 +95,6 @@ export function Sos() {
           disabled={contacts.length === 0}
           aria-label="Mantén presionado para activar el S.O.S"
         >
-          <span className="sos-btn__icon" aria-hidden="true">
-            🆘
-          </span>
           <span className="sos-btn__label">{holding ? 'Suelta para cancelar…' : 'S.O.S'}</span>
           <span className="sos-btn__ring" aria-hidden="true" />
         </button>

@@ -47,15 +47,9 @@ export function Home() {
         <h2 className="card__title">Alertas del bastón</h2>
         <div className="actuators">
           <div className={`actuator${alert.buzzer ? ' actuator--on' : ''}`}>
-            <span className="actuator__icon" aria-hidden="true">
-              🔊
-            </span>
             <span className="actuator__label">Buzzer {alert.buzzer ? 'ACTIVO' : 'en reposo'}</span>
           </div>
           <div className={`actuator${alert.motor ? ' actuator--on' : ''}`}>
-            <span className="actuator__icon" aria-hidden="true">
-              📳
-            </span>
             <span className="actuator__label">Vibración {alert.motor ? 'ACTIVA' : 'en reposo'}</span>
           </div>
         </div>

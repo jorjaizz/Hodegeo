@@ -57,7 +57,7 @@ export function Cane() {
     }
     setTgStatus('sending');
     try {
-      await sendMessage(cfg, '✅ Mensaje de prueba de Hodēgeō. La conexión con Telegram funciona.');
+      await sendMessage(cfg, 'Mensaje de prueba de Hodēgeō. La conexión con Telegram funciona.');
       setTgStatus('ok');
     } catch {
       setTgStatus('error');
@@ -118,14 +118,14 @@ export function Cane() {
             className="btn btn--navy"
             onClick={() => void store.sendCommand(1).catch(() => store.addToast('error', 'No se pudo encontrar el bastón.'))}
           >
-            🔎 Encontrar mi bastón
+            Encontrar mi bastón
           </button>
           <button
             type="button"
             className="btn btn--ghost"
             onClick={() => void store.sendCommand(3).catch(() => store.addToast('error', 'No se pudo detener el bastón.'))}
           >
-            ⏹ Detener
+            Detener
           </button>
         </div>
       </section>

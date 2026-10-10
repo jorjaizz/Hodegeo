@@ -3,18 +3,6 @@ import { store } from '../state/store';
 import { useStore } from '../state/useStore';
 import type { HistoryEntry, HistoryKind } from '../state/appTypes';
 
-const ICONS: Record<HistoryKind, string> = {
-  connection: '🔵',
-  disconnection: '🔴',
-  reconnection: '🟢',
-  obstacle: '🚧',
-  lowBattery: '🔋',
-  sos: '🆘',
-  selftest: '🧪',
-  findCane: '🔎',
-  findPhone: '📱',
-};
-
 const KIND_LABELS: Record<HistoryKind, string> = {
   connection: 'Conexión',
   disconnection: 'Desconexión',
@@ -88,7 +76,7 @@ export function History() {
       <section className="card" aria-label="Acciones del historial">
         <div className="btn-row">
           <button type="button" className="btn btn--navy" onClick={exportCsv} disabled={history.length === 0}>
-            ⬇ Exportar CSV
+            Exportar CSV
           </button>
           {!confirming ? (
             <button
@@ -97,7 +85,7 @@ export function History() {
               onClick={() => setConfirming(true)}
               disabled={history.length === 0}
             >
-              🗑 Borrar historial
+              Borrar historial
             </button>
           ) : (
             <button type="button" className="btn btn--danger" onClick={() => store.clearHistory()}>
@@ -122,9 +110,6 @@ export function History() {
               const { date, time } = formatDate(e.t);
               return (
                 <li key={e.id} className="history__item">
-                  <span className="history__icon" aria-hidden="true">
-                    {ICONS[e.kind]}
-                  </span>
                   <div className="history__body">
                     <div className="history__head">
                       <span className="history__kind">{KIND_LABELS[e.kind]}</span>

@@ -7,8 +7,8 @@ type Level = 'safe' | 'warn' | 'danger' | 'none';
 
 const LEVELS: Record<Level, { cls: string; text: string; icon: string; color: string }> = {
   safe: { cls: 'state--safe', text: 'Despejado', icon: '✓', color: 'var(--green-500)' },
-  warn: { cls: 'state--warn', text: 'Precaución', icon: '⚠', color: 'var(--amber-500)' },
-  danger: { cls: 'state--danger', text: '¡Peligro!', icon: '⛔', color: 'var(--red-500)' },
+  warn: { cls: 'state--warn', text: 'Precaución', icon: '△', color: 'var(--amber-500)' },
+  danger: { cls: 'state--danger', text: '¡Peligro!', icon: '▲', color: 'var(--red-500)' },
   none: { cls: 'state--none', text: 'Sin lectura', icon: '⋯', color: 'var(--text-muted)' },
 };
 

@@ -16,7 +16,7 @@ const STEP_LABELS: Record<StepId, string> = {
 
 const STEP_ORDER: StepId[] = ['connection', 'sensor', 'buzzer', 'motor', 'battery', 'gps'];
 
-const ICONS: Record<StepStatus, string> = { pending: '○', running: '⏳', ok: '✓', fail: '✗' };
+const ICONS: Record<StepStatus, string> = { pending: '○', running: '◌', ok: '✓', fail: '✗' };
 
 type Steps = Record<StepId, { status: StepStatus; detail?: string }>;
 
@@ -137,7 +137,7 @@ export function SelfTest() {
     <section className="card" aria-label="Autodiagnóstico">
       <h2 className="card__title">Autodiagnóstico</h2>
       <button type="button" className="btn btn--primary btn--block" disabled={running} onClick={() => void run()}>
-        {running ? 'Probando…' : '▶ Probar todo'}
+        {running ? 'Probando…' : 'Probar todo'}
       </button>
 
       <ul className="checklist" aria-live="polite">

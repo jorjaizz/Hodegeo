@@ -36,7 +36,7 @@ export function LocationCard() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              📍 Abrir en Google Maps
+              Abrir en Google Maps
             </a>
           </div>
 
