@@ -145,29 +145,29 @@ export class BleTransport implements CaneTransport {
     this.log('INFO', `GATT conectado a ${device.name ?? 'Hodegeo'}`);
 
     const service = await server.getPrimaryService(SERVICE_UUID);
-    const [distance, battery, button, config, command, selftest] = await Promise.all([
-      service.getCharacteristic(CHAR_DISTANCE),
-      service.getCharacteristic(CHAR_BATTERY),
-      service.getCharacteristic(CHAR_BUTTON),
-      service.getCharacteristic(CHAR_CONFIG),
-      service.getCharacteristic(CHAR_COMMAND),
-      service.getCharacteristic(CHAR_SELFTEST),
-    ]);
 
-    this.chars.set('distance', distance);
-    this.chars.set('battery', battery);
-    this.chars.set('button', button);
-    this.chars.set('config', config);
-    this.chars.set('command', command);
-    this.chars.set('selftest', selftest);
+    // Obtener características una por una de forma secuencial para evitar GATT_BUSY en Android
+    const distance = await service.getCharacteristic(CHAR_DISTANCE).catch(() => null);
+    const battery = await service.getCharacteristic(CHAR_BATTERY).catch(() => null);
+    const button = await service.getCharacteristic(CHAR_BUTTON).catch(() => null);
+    const config = await service.getCharacteristic(CHAR_CONFIG).catch(() => null);
+    const command = await service.getCharacteristic(CHAR_COMMAND).catch(() => null);
+    const selftest = await service.getCharacteristic(CHAR_SELFTEST).catch(() => null);
 
-    await this.subscribe(distance, 'distance');
-    await this.subscribe(battery, 'battery');
-    await this.subscribe(button, 'button');
-    await this.subscribe(selftest, 'selftest');
+    if (distance) this.chars.set('distance', distance);
+    if (battery) this.chars.set('battery', battery);
+    if (button) this.chars.set('button', button);
+    if (config) this.chars.set('config', config);
+    if (command) this.chars.set('command', command);
+    if (selftest) this.chars.set('selftest', selftest);
 
-    // Lecturas iniciales.
-    await this.readInitial();
+    if (distance) await this.subscribe(distance, 'distance').catch((e) => this.log('ERR', `Sub distance error: ${e}`));
+    if (battery) await this.subscribe(battery, 'battery').catch((e) => this.log('ERR', `Sub battery error: ${e}`));
+    if (button) await this.subscribe(button, 'button').catch((e) => this.log('ERR', `Sub button error: ${e}`));
+    if (selftest) await this.subscribe(selftest, 'selftest').catch((e) => this.log('ERR', `Sub selftest error: ${e}`));
+
+    // Lecturas iniciales de forma segura
+    await this.readInitial().catch((e) => this.log('ERR', `Read initial error: ${e}`));
 
     this.emit('connection', { state: 'connected' });
     if (!initial) {
